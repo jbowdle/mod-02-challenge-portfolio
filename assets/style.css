@@ -1,3 +1,7 @@
+* {
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 /*Color storage*/
 :root {
@@ -5,39 +9,96 @@
     --accent-color: rgb(220, 97, 97);
 }
 
+h1 {
+    font-size: 230%;
+    font-weight: 200;
+}
+
+p {
+    line-height: 120%;
+}
+
 header {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
     position: sticky;
-    top: 10px;
-    background-color: var(--accent-color);
-    width: 100vw;
+    top: 0px;
+    background-color: var(--accent-color); 
+}
+
+header h1 {
+    text-align: center;
 }
 
 nav ul {
     display: flex;
-    justify-content: space-between; 
+    justify-content: space-around; 
 }
 
 img {
     max-width: 100%;
 }
 
+.card {
+    margin: 1%;
+    position: relative;
+    border: 15px solid var(--accent-color);
+}
+
+.project-name {
+    position: absolute;
+    bottom: -10px;
+    background-color: var(--accent-color);
+    width: 100%;
+    padding: 4px 0px;
+}
+
+#about p {
+    margin: 0px 8px;
+}
+
+#about-picture {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 15px 0px;
+}
+
+#about-picture img {
+    max-width: 60%;
+}
+
 #portfolio {
     display: grid;
-    grid-template-areas: 
+    grid-template-areas:
+        "header header" 
         "one one"
         "one one"
         "two two"
         "three four"
         "five six";
+    margin: 2.5%;
 }
 
-/*This rule is just for visualization*/
-#portfolio > * {
-    background-color: rgba(111,41,97,.4);
-    border-radius: 5px;    
+#contact {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 18px;
+}
+
+#contact ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+#contact ul li {
+    margin: 0px 5px;
+}
+
+#portfolio h2 {
+    grid-area: header;
+    text-align: center;
+    font-size: 150%;
+    font-weight: 200;
+    margin: 5px;
 }
 
 #first-card {
