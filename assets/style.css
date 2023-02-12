@@ -1,0 +1,67 @@
+
+/*Color storage*/
+:root {
+    --bg-color: rgb(0, 0, 0);
+    --accent-color: rgb(220, 97, 97);
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    position: sticky;
+    top: 10px;
+    background-color: var(--accent-color);
+    width: 100vw;
+}
+
+nav ul {
+    display: flex;
+    justify-content: space-between; 
+}
+
+img {
+    max-width: 100%;
+}
+
+#portfolio {
+    display: grid;
+    grid-template-areas: 
+        "one one"
+        "one one"
+        "two two"
+        "three four"
+        "five six";
+}
+
+/*This rule is just for visualization*/
+#portfolio > * {
+    background-color: rgba(111,41,97,.4);
+    border-radius: 5px;    
+}
+
+#first-card {
+    grid-area: one;
+}
+
+#second-card {
+    grid-area: two;
+}
+
+#third-card {
+    grid-area: three;
+}
+
+#fourth-card {
+    grid-area: four;
+}
+
+#fifth-card {
+    grid-area: five;
+}
+
+#sixth-card {
+    grid-area: six;
+}
+
+/*Create display layouts for tablets, laptops, and full size screens*/
