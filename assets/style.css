@@ -73,6 +73,15 @@ img {
     max-width: 100%;
 }
 
+.card img {
+    filter: grayscale(80%);
+    transition: all 0.5s ease-in-out;
+}
+
+.card:hover img {
+    filter: grayscale(0%);
+}
+
 .project-name {
     position: absolute;
     bottom: 0px;
