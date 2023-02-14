@@ -1,12 +1,13 @@
 * {
     font-size: 16px;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Gill Sans', sans-serif;
 }
 
 /*Color storage*/
 :root {
     --bg-color: rgb(0, 0, 0);
-    --accent-color: rgb(220, 97, 97);
+    --accent-color: rgb(231, 105, 105);
+    --accent-color-fade: rgba(231, 105, 105, 0);
 }
 
 h1 {
@@ -20,6 +21,7 @@ p {
 
 header {
     position: sticky;
+    z-index: 1;
     top: 0px;
     background-color: var(--accent-color); 
 }
@@ -33,22 +35,40 @@ nav ul {
     justify-content: space-around; 
 }
 
+nav ul li {
+    font-size: 120%;
+    margin-bottom: 3px;
+}
+
 img {
+    object-fit: cover;
     max-width: 100%;
 }
 
 .card {
     margin: 1%;
     position: relative;
-    border: 15px solid var(--accent-color);
+    border-top: 8px solid var(--accent-color);
+    border-right: 8px solid var(--accent-color);
+    border-left: 8px solid var(--accent-color);
+    border-radius: 1px;
+    max-width: 100%;
 }
 
 .project-name {
     position: absolute;
-    bottom: -10px;
-    background-color: var(--accent-color);
+    bottom: 0px;
+    background: linear-gradient(var(--accent-color-fade) 0%, var(--accent-color) 75%);
+    padding: 10px 0px 4px 0px;
     width: 100%;
-    padding: 4px 0px;
+    text-align: center;
+}
+
+.divider {
+    width: 80%;
+    height: 3px;
+    margin: 0 auto;
+    background-color: var(--accent-color);
 }
 
 #about p {
@@ -62,8 +82,14 @@ img {
     margin: 15px 0px;
 }
 
+#about-picture h2 {
+    font-size: 150%;
+}
+
 #about-picture img {
-    max-width: 60%;
+    max-width: 30%;
+    border-radius: 50%;
+    border: 3px solid var(--accent-color);
 }
 
 #portfolio {
@@ -72,21 +98,26 @@ img {
         "header header" 
         "one one"
         "one one"
-        "two two"
-        "three four"
-        "five six";
+        "two three"
+        "four five";
     margin: 2.5%;
 }
 
 #contact {
-    display: flex;
-    justify-content: space-between;
     margin-bottom: 18px;
+}
+
+#contact h2 {
+    text-align: center;
+    font-size: 150%;
+    margin: 5px 0px;
+    font-weight: 500;
 }
 
 #contact ul {
     display: flex;
     justify-content: space-around;
+    margin-bottom: 3px;
 }
 
 #contact ul li {
@@ -121,8 +152,8 @@ img {
     grid-area: five;
 }
 
-#sixth-card {
+/* #sixth-card {
     grid-area: six;
-}
+} */
 
 /*Create display layouts for tablets, laptops, and full size screens*/
