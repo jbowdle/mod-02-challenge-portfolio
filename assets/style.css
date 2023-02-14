@@ -5,14 +5,27 @@
 
 /*Color storage*/
 :root {
-    --bg-color: rgb(0, 0, 0);
-    --accent-color: rgb(231, 105, 105);
+    --bg-color: rgb(255, 255, 255);
+    --main-text: rgb(0, 0, 0);
+    --heading-divider: rgb(1, 59, 88);
+    --accent-color: rgb(151, 193, 186);
     --accent-color-fade: rgba(231, 105, 105, 0);
+    --accent-text: rgb(3, 40, 58);
+}
+
+body {
+    background-color: var(--bg-color);
+}
+
+main {
+    color: var(--main-text);
 }
 
 h1 {
     font-size: 230%;
-    font-weight: 200;
+    font-weight: 400;
+    background-color: var(--accent-color);
+    color: var(--accent-text);
 }
 
 p {
@@ -23,7 +36,7 @@ header {
     position: sticky;
     z-index: 1;
     top: 0px;
-    background-color: var(--accent-color); 
+    background-color: var(--accent-text); 
 }
 
 header h1 {
@@ -37,7 +50,12 @@ nav ul {
 
 nav ul li {
     font-size: 120%;
-    margin-bottom: 3px;
+    margin: 1px 0px 6px 0px;
+}
+
+nav ul li a {
+    color: var(--accent-color);
+    text-decoration: underline;
 }
 
 img {
@@ -46,7 +64,7 @@ img {
 }
 
 .card {
-    margin: 1%;
+    margin: 2%;
     position: relative;
     border-top: 8px solid var(--accent-color);
     border-right: 8px solid var(--accent-color);
@@ -58,8 +76,10 @@ img {
 .project-name {
     position: absolute;
     bottom: 0px;
+    font-weight: bold;
     background: linear-gradient(var(--accent-color-fade) 0%, var(--accent-color) 75%);
-    padding: 10px 0px 4px 0px;
+    color: var(--accent-text);
+    padding: 19px 0px 4px 0px;
     width: 100%;
     text-align: center;
 }
@@ -67,12 +87,12 @@ img {
 .divider {
     width: 80%;
     height: 3px;
-    margin: 0 auto;
-    background-color: var(--accent-color);
+    margin: 20px auto;
+    background-color: var(--heading-divider);
 }
 
 #about p {
-    margin: 0px 8px;
+    margin: 0px 30px;
 }
 
 #about-picture {
@@ -84,6 +104,8 @@ img {
 
 #about-picture h2 {
     font-size: 150%;
+    font-weight: bold;
+    color: var(--heading-divider);
 }
 
 #about-picture img {
@@ -110,8 +132,9 @@ img {
 #contact h2 {
     text-align: center;
     font-size: 150%;
-    margin: 5px 0px;
-    font-weight: 500;
+    margin: 5px 0px 15px;
+    font-weight: bold;
+    color: var(--heading-divider);
 }
 
 #contact ul {
@@ -128,8 +151,9 @@ img {
     grid-area: header;
     text-align: center;
     font-size: 150%;
-    font-weight: 200;
+    font-weight: bold;
     margin: 5px;
+    color: var(--heading-divider);
 }
 
 #first-card {
