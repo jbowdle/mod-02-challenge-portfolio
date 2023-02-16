@@ -3,7 +3,13 @@
     font-family: 'Gill Sans', sans-serif;
 }
 
-/*Color storage*/
+/*
+    Color storage
+    --heading-divider is used by headings and dividers in main.
+    --accent-color and --accent-text are used for the borders and figcaptions on the cards.
+    They are also used in the heading interchangeably for the text and background.
+    --accent-color-fade is a completely transparent color used for the linear-gradient on the figcaptions.
+*/
 :root {
     --bg-color: rgb(255, 255, 255);
     --main-text: rgb(0, 0, 0);
@@ -21,6 +27,7 @@ main {
     color: var(--main-text);
 }
 
+/* Located in the header */
 h1 {
     font-size: 230%;
     font-weight: 400;
@@ -32,6 +39,12 @@ p {
     line-height: 120%;
 }
 
+img {
+    object-fit: cover;
+    max-width: 100%;
+}
+
+/* Keeps the header at the top of the page even while scrolling */
 header {
     position: sticky;
     z-index: 1;
@@ -58,11 +71,6 @@ nav ul li a {
     text-decoration: underline;
 }
 
-img {
-    object-fit: cover;
-    max-width: 100%;
-}
-
 .card {
     margin: 2%;
     position: relative;
@@ -73,6 +81,7 @@ img {
     max-width: 100%;
 }
 
+/* Cards will 'highlight' when hovered over (They're greyed out then go to full color on hover) */
 .card img {
     filter: grayscale(80%);
     transition: all 0.5s ease-in-out;
@@ -93,6 +102,7 @@ img {
     text-align: center;
 }
 
+/* Dividers are the blue separating bars between #about and #portfolio, and #portfolio and #contact */
 .divider {
     width: 80%;
     height: 3px;
@@ -185,16 +195,15 @@ img {
     grid-area: five;
 }
 
-/* #sixth-card {
-    grid-area: six;
-} */
-
-/*Create display layouts for tablets, laptops, and full size screens*/
-
+/* Adjusts layout on larger screens */
 @media screen and (min-width: 700px) {
     main {
         max-width: 600px;
         margin: 0 auto;
+    }
+
+    .project-name {
+        font-size: 112%;
     }
 
     #about {
@@ -225,8 +234,12 @@ img {
         margin-bottom: 0px;
     }
 
+    #contact h2 {
+        color: var(--accent-text);
+    }
+
     #contact ul {
-        font-size: 120%;  
+        font-size: 110%;  
     }
 }
 
@@ -234,6 +247,23 @@ img {
     main {
         max-width: 1000px;
         margin: 0 auto;
+    }
+
+    /* Next three rulesets increase readability on larger screens */
+    header h1 {
+        font-size: 250%;
+        padding: 5px; 
+    }
+
+    header ul li{
+        font-size: 150%;
+        padding: 3px;
+    }
+
+    .project-name {
+        font-size: 145%;
+        background: linear-gradient(var(--accent-color-fade) 0%, var(--accent-color) 65%);
+        padding: 30px 0px 8px 0px;
     }
 
     #about-picture {
@@ -244,21 +274,4 @@ img {
         top: 35%;
         max-width: 30%;
     }
-
-    /* #about {
-        display: grid;
-        grid-template-columns: 1fr 2fr;
-        margin-top: 20px;
-    }
-
-    #about-picture {
-        display: block;
-        text-align: center;
-        margin: 0 auto;
-    }
-
-    #about-picture img {
-        max-width: 30%;
-        margin: 5% 0%;
-    } */
 }
